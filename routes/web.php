@@ -10,15 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('frontend.index');
+});
+Route::get('/registration',function(){
+    return view('frontend.registration');
+})->name('registration');
+
 Route::group(['namespace' => 'Frontend'], function () {
 //Languages Changer
 Route::get('changelanguage', 'LanguageController@changeLanguage');
 Route::get('fee', 'AllController@fee');
 Route::get('rule', 'AllController@rule');
+Route::post('/registration','StudentRegisterController@store');
 });
-Route::get('/', function () {
-    return view('frontend.index');
-});
+
+
+
+
 
 
 
