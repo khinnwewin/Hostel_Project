@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Language Changer
 Route::group(['namespace' => 'Frontend'], function () {
+//Languages Changer
 Route::get('changelanguage', 'LanguageController@changeLanguage');
+Route::get('fee', 'AllController@fee');
+Route::get('rule', 'AllController@rule');
 });
 Route::get('/', function () {
     return view('frontend.index');
@@ -20,6 +22,20 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
-
+//Admin
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' => 'Backend'], function () {   
+    Route::resource('fee', 'FeeController');
+    Route::resource('rule', 'RuleController');
+    
+    Route::resource('select','SelectController');
+    Route::resource('user','UserController');
+    Route::resource('fselect','FemaleSelectController');
+    Route::resource('rollcall','RollCallController');
+    Route::resource('rollcallrecord','RollCallRecordController');
+    Route::resource('payment','PaymentController');
+
+});
