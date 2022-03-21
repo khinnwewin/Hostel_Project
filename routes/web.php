@@ -10,7 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+//Language Changer
+Route::group(['namespace' => 'Frontend'], function () {
+Route::get('changelanguage', 'LanguageController@changeLanguage');
 });
+Route::get('/', function () {
+    return view('frontend.index');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
