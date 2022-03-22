@@ -1,0 +1,39 @@
+@extends('admin.layout.app')
+
+@section('content')
+    <section class="content-header">
+        <h1>
+           Male Roll Call Record
+        </h1>
+    </section>
+    <div class="content">
+        <div class="box box-primary">
+            <div class="box-body">
+
+                <table class="table table-striped table-hover tbl_repeat" id="sortable">
+                    <thead>
+                        <th>No.</th>
+                        <th>Roll No</th>
+                        <th>Name</th>         
+                        <th colspan="3">View Details</th>
+                    </thead>
+                    <tbody>
+                    <?php $index = 1; ?>
+                    @foreach($rollcallrecords as $rollcallrecord)
+                        <tr>
+                            <td>{{ $index++ }}</td>
+                            <td>{!! $rollcallrecord->rollno !!}</td>
+                            <td>{!! $rollcallrecord->name !!}</td>
+                              <td>
+                                <div class='btn-group'>
+                                    <a href="{!! route('mrollcallrecord.show', [$rollcallrecord->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@endsection

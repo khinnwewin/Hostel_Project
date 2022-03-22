@@ -5,7 +5,7 @@
         <h1>
             Edit Payment
         </h1>
-        <span class="breadcrumb"><a href='{{ route("payment.index") }}' class="btn btn-sm btn-primary"><i
+        <span class="breadcrumb"><a href='{{ route("mpayment.index") }}' class="btn btn-sm btn-primary"><i
                     class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;Go To Payment</a></span>
     </section>
     <div class="content">
@@ -13,7 +13,7 @@
 
             <div class="box-body">
                 <div class="row">
-                {!! Form::model($payment, ['route' => ['payment.update', $payment->id], 'method' => 'patch']) !!}
+                {!! Form::model($payment, ['route' => ['mpayment.update', $payment->id], 'method' => 'patch']) !!}
                       <div class="form-group col-sm-12">
                         {!! Form::label('id', 'student_registers_id:') !!} <span class="text-danger">*</span>
                         {!! Form::text('id', null, ['class' => 'form-control']) !!}
@@ -45,10 +45,13 @@
                         {!! Form::date('date', 'Date:') !!} <span class="text-danger">*</span>
                        
                     </div>
-                    </div>
+                   
+                    
+                    </div>  
+
                     <div class="form-group col-sm-12">
                        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                       <a href="{!! route('payment.index') !!}" class="btn btn-default">Cancel</a>
+                       <a href="{!! route('mpayment.index') !!}" class="btn btn-default">Cancel</a>
                     </div>
 
                {!! Form::close() !!}

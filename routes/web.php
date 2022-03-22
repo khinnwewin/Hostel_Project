@@ -38,7 +38,6 @@ Route::post('fregister/{id}','FemaleRegisterController@update');
 
 
 
-
 //Admin
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
@@ -52,10 +51,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' => 'Backen
     Route::resource('select','SelectController');
     Route::resource('user','UserController');
     Route::resource('fselect','FemaleSelectController');
-    
     Route::resource('rollcallrecord','RollCallRecordController');
+    Route::resource('mrollcallrecord','MaleRollCallRecordController');
     Route::resource('payment','PaymentController');
-
+    Route::resource('mpayment','MalePaymentController');
 
 
 });

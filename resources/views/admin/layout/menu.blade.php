@@ -14,6 +14,13 @@
 <li class="{{ Request::is('mrollcall*') ? 'active' : '' }}">
     <a href="{{ route('mrollcall.index') }}"><i class="fa fa-edit"></i><span>Roll Call(male)</span></a>
 </li>
+<li class="{{ Request::is('mrollcallrecord*') ? 'active' : '' }}">
+    <a href="{{ route('mrollcallrecord.index') }}"><i class="fa fa-edit"></i><span>Roll Call Record(male)</span></a>
+</li>
+<li class="{{ Request::is('mpayment*') ? 'active' : '' }}">
+    <a href="{{ route('mpayment.index') }}"><i class="fa fa-edit"></i><span>Payment(male)</span></a>
+</li>
+
 @endif
 
 <!-- female -->
@@ -27,6 +34,14 @@
 <li class="{{ Request::is('rollcall*') ? 'active' : '' }}">
     <a href="{{ route('rollcall.index') }}"><i class="fa fa-edit"></i><span>Roll Call(female)</span></a>
 </li>
+<li class="{{ Request::is('rollcallrecord*') ? 'active' : '' }}">
+    <a href="{{ route('rollcallrecord.index') }}"><i class="fa fa-edit"></i><span>Roll Call Record(female)</span></a>
+</li>
+<li class="{{ Request::is('payment*') ? 'active' : '' }}">
+    <a href="{{ route('payment.index') }}"><i class="fa fa-edit"></i><span>Payment(female)</span></a>
+</li>
+
+
 @endif
 
 <li class="{{ Request::is('fee*') ? 'active' : '' }}">
@@ -35,5 +50,4 @@
 <li class="{{ Request::is('rule*') ? 'active' : '' }}">
     <a href="{{ route('rule.index') }}"><i class="fa fa-edit"></i><span>Rule</span></a>
 </li>
-
 
