@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateRollCallsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('roll_calls', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('student_registers_id');
+            $table->string('rollno');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('usertype')->nullable();
-            $table->rememberToken();
+            $table->date('date');
+            $table->boolean('attendance')->default('0');
+            $table->text('remark')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('roll_calls');
     }
 }

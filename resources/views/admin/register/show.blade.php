@@ -80,27 +80,27 @@
                                 <td>Parents' Phone</td>
                                 <td>{!! $register->pphone !!}</td>
                             </tr>
-                            <tr>
-                                <td>Select</td>
-                                <td>
-                                    <!-- <div class="form-group col-sm-6"> -->
-                                        <div class="btn-group" id="status" data-toggle="buttons">
-                                            @if($register->status == 1)
-                                                <label class="btn btn-default btn-on btn-xs active">
-                                                <input type="radio" value="1" name="status">Yes</label>
-                                                <label class="btn btn-default btn-off btn-xs">
-                                                <input type="radio" value="0" name="status">No</label>
-                                            @else
-                                                <label class="btn btn-default btn-on btn-xs">
-                                                <input type="radio" value="1" name="status">Yes</label>
-                                                <label class="btn btn-default btn-off btn-xs active">
-                                                <input type="radio" value="0" name="status">No</label>
-                                            @endif
+            <tr>
+                <td>Select</td>
+                <td>
+                    <!-- <div class="form-group col-sm-6"> -->
+                        <div class="btn-group" id="status" data-toggle="buttons">
+                            @if($register->status == 1)
+                                <label class="btn btn-default btn-on btn-xs active">
+                                <input type="radio" value="1" name="status">Yes</label>
+                                <label class="btn btn-default btn-off btn-xs">
+                                <input type="radio" value="0" name="status">No</label>
+                            @else
+                                <label class="btn btn-default btn-on btn-xs">
+                                <input type="radio" value="1" name="status">Yes</label>
+                                <label class="btn btn-default btn-off btn-xs active">
+                                <input type="radio" value="0" name="status">No</label>
+                            @endif
 
-                                        </div>
-                                    <!-- </div> -->
-                                </td>
-                            </tr>
+                        </div>
+                    <!-- </div> -->
+                </td>
+            </tr>
                     </table>
                     <div class="form-group col-sm-12">
                        <button type="submit" class="btn btn-primary">Update</button>

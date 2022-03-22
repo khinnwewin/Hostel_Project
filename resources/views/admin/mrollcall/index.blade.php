@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-           Roll Call (female)
+          Male Roll Call
         </h1>
     </section>
     <div class="content">
@@ -33,7 +33,7 @@
                             <td>{!!showPrettyAttendance(getId($register->id)) !!}</td>
                              <td>
                                 <div class='btn-group'>
-                                    <a href="{!! route('rollcall.edit', [$register->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+                                    <a href="{!! route('mrollcall.edit', [$register->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                                 </div>
                             </td>
                         </tr>
